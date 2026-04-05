@@ -1,0 +1,128 @@
+/* ── 탭 공통 ── */
+.tabs {
+  display: flex; gap: 0.5rem; flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0;
+}
+.tab {
+  background: none; border: none;
+  color: var(--muted);
+  padding: 0.55rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: all 0.2s;
+}
+.tab:hover { color: var(--text); }
+.tab.activeTab { color: var(--accent); border-bottom-color: var(--accent); }
+
+.tabDesc { color: var(--muted); margin-bottom: 2rem; font-size: 0.9rem; }
+
+/* ── 생기부 소스 ── */
+.saenggiSection { margin-bottom: 2.5rem; }
+.saenggiCat { font-size: 1rem; font-weight: 700; color: var(--accent2); margin-bottom: 1rem; }
+.saenggiGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+.saenggiCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.3rem;
+  transition: border-color 0.2s;
+}
+.saenggiCard:hover { border-color: var(--accent2); }
+.saenggiTitle { font-size: 0.92rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+.saenggiDesc  { font-size: 0.82rem; color: var(--muted); line-height: 1.7; }
+
+/* ── 추천 자료 ── */
+.resourceSection { margin-bottom: 2.5rem; }
+.resourceCat { font-size: 1rem; font-weight: 700; color: var(--accent); margin-bottom: 1rem; }
+.resourceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+.resourceCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.2rem;
+  display: flex; flex-direction: column; gap: 0.4rem;
+  text-decoration: none; color: inherit;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.resourceCard:hover { border-color: var(--accent); transform: translateY(-2px); text-decoration: none; }
+.resourceTop { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; }
+.resourceTitle { font-size: 0.9rem; font-weight: 700; color: var(--text); }
+.resourceTag {
+  font-size: 0.72rem; font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px; flex-shrink: 0;
+}
+.resourceDesc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.resourceUrl  { font-size: 0.75rem; color: var(--border); font-family: 'JetBrains Mono', monospace; }
+
+/* ── 리눅스 ── */
+.linuxHero {
+  display: flex; align-items: center; gap: 1.2rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  border-left: 4px solid var(--accent2);
+}
+.linuxIcon { font-size: 3rem; flex-shrink: 0; }
+.linuxTitle { font-size: 1.3rem; font-weight: 700; color: var(--text); margin-bottom: 0.25rem; }
+.linuxSubtitle { color: var(--muted); font-size: 0.85rem; }
+
+.linuxArticle {
+  display: flex; flex-direction: column; gap: 0;
+}
+.linuxSection {
+  border-left: 2px solid var(--border);
+  padding: 0 0 2.5rem 1.8rem;
+  margin-left: 0.5rem;
+  position: relative;
+  transition: border-color 0.2s;
+}
+.linuxSection:last-child { border-left-color: transparent; padding-bottom: 0; }
+.linuxSection::before {
+  content: '';
+  position: absolute; left: -6px; top: 6px;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--accent2);
+  border: 2px solid var(--bg);
+}
+.linuxSection:hover { border-left-color: var(--accent2); }
+
+.linuxHeading {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--accent2);
+  margin-bottom: 1rem;
+}
+.linuxBody { display: flex; flex-direction: column; gap: 0.9rem; }
+.linuxBody p {
+  color: var(--text);
+  font-size: 0.92rem;
+  line-height: 1.9;
+  opacity: 0.9;
+}
+.linuxBody code,
+.linuxBody p code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  background: rgba(88,166,255,0.12);
+  color: var(--accent);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}

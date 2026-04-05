@@ -1,0 +1,27 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1.2rem;
+}
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  transition: border-color 0.2s;
+}
+.card:hover { border-color: var(--accent); }
+.icon { font-size: 2rem; margin-bottom: 0.6rem; }
+.card h3 { font-size: 1rem; margin-bottom: 0.4rem; }
+.card p { color: var(--muted); font-size: 0.85rem; margin-bottom: 0.8rem; }
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.green  { background: rgba(126,231,135,0.15); color: var(--accent2); }
+.blue   { background: rgba(88,166,255,0.15);  color: var(--accent); }
+.yellow { background: rgba(227,179,65,0.15);  color: var(--yellow); }

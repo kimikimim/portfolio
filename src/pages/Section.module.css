@@ -1,0 +1,11 @@
+.page { padding: calc(var(--nav-h) + 3rem) 2rem 4rem; min-height: 100vh; }
+.pageAlt { padding: calc(var(--nav-h) + 3rem) 2rem 4rem; min-height: 100vh; background: var(--bg-alt); }
+
+/* legacy scroll-based (keep for compat) */
+.section    { padding: 5rem 2rem; }
+.sectionAlt { padding: 5rem 2rem; background: var(--bg-alt); }
+
+.inner { max-width: 1100px; margin: 0 auto; }
+.title { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; }
+.tag   { color: var(--accent); margin-right: 0.3rem; }
+.desc  { color: var(--muted); margin-bottom: 2.5rem; }
