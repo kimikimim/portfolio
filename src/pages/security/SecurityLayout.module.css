@@ -1,0 +1,151 @@
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 2rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.back:hover { color: var(--red); text-decoration: none; }
+
+/* ── Top header ─────────────────────────────── */
+.topHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.8rem;
+}
+.topIcon  { font-size: 2.6rem; }
+.topTitle { font-size: 1.7rem; font-weight: 700; margin-bottom: 0.3rem; }
+.topDesc  { color: var(--muted); font-size: 0.9rem; }
+
+/* ── Stats row ───────────────────────────────── */
+.statsRow {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--red);
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.statItem  { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; }
+.statNum   { font-size: 1.3rem; font-weight: 700; color: var(--red); font-family: 'JetBrains Mono', monospace; }
+.statLabel { font-size: 0.72rem; color: var(--muted); }
+
+/* ── Topic cards ─────────────────────────────── */
+.topics { display: flex; flex-direction: column; gap: 2rem; }
+
+.topicCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.6rem;
+  transition: border-color 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.topicCard::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--red), #ff4ecd);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.topicCard:hover { border-color: rgba(255,123,114,0.4); }
+.topicCard:hover::before { opacity: 1; }
+
+.topicHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.topicMeta { display: flex; align-items: center; gap: 0.7rem; flex-wrap: wrap; }
+
+.index {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.topicTitle { font-size: 1rem; font-weight: 600; }
+
+.badge {
+  display: inline-block;
+  padding: 0.18rem 0.55rem;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+.medium { background: rgba(227,179,65,0.12);  color: var(--yellow); }
+.hard   { background: rgba(255,123,114,0.12); color: var(--red); }
+.expert { background: rgba(200,80,255,0.12);  color: #c850ff; }
+
+.cve {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
+
+.toolBadge {
+  font-size: 0.75rem;
+  color: var(--accent2);
+  border: 1px solid rgba(126,231,135,0.25);
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  background: rgba(126,231,135,0.05);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.explanation {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.65;
+  margin-bottom: 0.9rem;
+}
+
+/* ── Theory box ──────────────────────────────── */
+.theoryBox {
+  background: rgba(255,123,114,0.05);
+  border-left: 3px solid var(--red);
+  border-radius: 0 6px 6px 0;
+  padding: 0.7rem 1rem;
+  margin-bottom: 0.8rem;
+}
+.theoryLabel {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--red);
+  margin-bottom: 0.35rem;
+}
+.theoryBox p {
+  font-size: 0.85rem;
+  color: var(--text);
+  line-height: 1.7;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ── Steps ───────────────────────────────────── */
+.steps {
+  padding-left: 1.3rem;
+  margin-bottom: 0.8rem;
+}
+.steps li {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.8;
+  padding-left: 0.3rem;
+}

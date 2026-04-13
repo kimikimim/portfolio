@@ -1,0 +1,80 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.3rem;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: border-color 0.2s, transform 0.15s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--red), #ff4ecd);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.card:hover {
+  border-color: var(--red);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255,123,114,0.08);
+}
+.card:hover::before { opacity: 1; }
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.3rem;
+}
+.icon { font-size: 2rem; }
+
+.level {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 20px;
+  letter-spacing: 0.04em;
+}
+.blue { background: rgba(88,166,255,0.12); color: var(--accent); }
+.red  { background: rgba(255,123,114,0.15); color: var(--red); }
+
+.cardTitle { font-size: 1.05rem; font-weight: 700; }
+.cardDesc  { color: var(--muted); font-size: 0.84rem; line-height: 1.5; flex: 1; }
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.3rem;
+}
+.tag {
+  font-size: 0.7rem;
+  padding: 0.18rem 0.5rem;
+  border-radius: 6px;
+  background: rgba(255,123,114,0.08);
+  color: #ff9a8d;
+  border: 1px solid rgba(255,123,114,0.2);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.viewMore {
+  font-size: 0.78rem;
+  color: var(--red);
+  margin-top: 0.4rem;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.card:hover .viewMore { opacity: 1; }

@@ -1,27 +1,105 @@
+/* ── 전체 진행률 ─────────────────────────────── */
+.overallProgress {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.4rem;
+  margin-bottom: 2rem;
+}
+.overallTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+.overallLabel { font-size: 0.85rem; color: var(--muted); }
+.overallCount { font-size: 0.85rem; color: var(--muted); }
+.overallNum   { font-size: 1rem; font-weight: 700; color: var(--accent); font-family: 'JetBrains Mono', monospace; }
+
+/* ── 그리드 ──────────────────────────────────── */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 1.2rem;
 }
+
+/* ── 카드 ────────────────────────────────────── */
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.4rem;
-  transition: border-color 0.2s;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.15s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
-.card:hover { border-color: var(--accent); }
-.icon { font-size: 2rem; margin-bottom: 0.6rem; }
-.card h3 { font-size: 1rem; margin-bottom: 0.4rem; }
-.card p { color: var(--muted); font-size: 0.85rem; margin-bottom: 0.8rem; }
+.card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(88,166,255,0.08);
+}
 
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.2rem;
+}
+.icon { font-size: 2rem; }
+
+.card h3 { font-size: 1rem; font-weight: 600; }
+.card p  { color: var(--muted); font-size: 0.85rem; flex: 1; }
+
+/* ── 뱃지 ────────────────────────────────────── */
 .badge {
   display: inline-block;
   padding: 0.2rem 0.6rem;
   border-radius: 20px;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 600;
+  white-space: nowrap;
 }
 .green  { background: rgba(126,231,135,0.15); color: var(--accent2); }
 .blue   { background: rgba(88,166,255,0.15);  color: var(--accent); }
 .yellow { background: rgba(227,179,65,0.15);  color: var(--yellow); }
+
+/* ── 진행률 바 ───────────────────────────────── */
+.progress { margin-top: 0.6rem; }
+
+.progressMeta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.35rem;
+}
+.progressLabel { font-size: 0.72rem; color: var(--muted); }
+.progressCount { font-size: 0.72rem; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
+
+.progressTrack {
+  height: 5px;
+  background: var(--border);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.progressFill {
+  height: 100%;
+  border-radius: 99px;
+  background: var(--accent);
+  transition: width 0.6s ease;
+}
+
+.fill_green  { background: var(--accent2); }
+.fill_blue   { background: var(--accent); }
+.fill_yellow { background: var(--yellow); }
+
+/* ── 보기 링크 ───────────────────────────────── */
+.viewMore {
+  font-size: 0.78rem;
+  color: var(--accent);
+  margin-top: 0.6rem;
+  display: inline-block;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.card:hover .viewMore { opacity: 1; }

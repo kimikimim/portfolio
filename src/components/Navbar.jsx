@@ -3,6 +3,7 @@ import { NavLink, useLocation } from 'react-router-dom'
 import styles from './Navbar.module.css'
 
 const LINKS = [
+  { label: '개인공부',   to: '/personal-study' },
   { label: '프로젝트',   to: '/projects' },
   { label: '코딩테스트', to: '/coding-test' },
   { label: '코딩 면접',  to: '/interview' },
