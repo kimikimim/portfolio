@@ -7,7 +7,7 @@ export default function Home() {
       <div className={styles.content}>
         <p className={styles.greeting}>안녕하세요,</p>
         <h1 className={styles.title}>
-          저는 <span className={styles.hl}>개발자</span>입니다.
+          저는 <span className={styles.hl}>개발자</span>일까요?
         </h1>
         <p className={styles.sub}>보안 · 백엔드 · AI · 풀스택</p>
         <div className={styles.cta}>
